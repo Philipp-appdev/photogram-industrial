@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :recipients, class_name: "FollowRequest"
   has_many :senders, class_name: "FollowRequest"
+  has_many :following, through: :recipient
+  has_many :followers, through: :sender
 
 
 end
